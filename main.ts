@@ -1,0 +1,29 @@
+input.onButtonPressed(Button.A, function on_button_pressed_a() {
+    
+    entry = "" + entry + "A"
+})
+input.onButtonPressed(Button.AB, function on_button_pressed_ab() {
+    
+    if (password == entry) {
+        basic.showIcon(IconNames.Yes)
+        pins.servoWritePin(AnalogPin.P0, 90)
+    } else {
+        basic.showIcon(IconNames.No)
+    }
+    
+    basic.pause(500)
+    basic.clearScreen()
+    entry = ""
+})
+input.onButtonPressed(Button.B, function on_button_pressed_b() {
+    
+    entry = "" + entry + "B"
+})
+let entry = ""
+let password = ""
+password = "AABAA"
+entry = ""
+pins.servoWritePin(AnalogPin.P0, 0)
+basic.forever(function on_forever() {
+    
+})
